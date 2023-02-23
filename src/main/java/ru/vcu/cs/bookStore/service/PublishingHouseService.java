@@ -39,9 +39,9 @@ public class PublishingHouseService {
     }
 
     public void editPublishingHouse(PublishingHouseDto dto) {
-        PublishingHouse category = new PublishingHouse();
-        category.setId(dto.getId());
-        category.setName(dto.getName());
-        repository.save(category);
+        PublishingHouse publishingHouse = new PublishingHouse();
+        publishingHouse.setId(dto.getId());
+        publishingHouse.setName(dto.getName());
+        repository.save(publishingHouse);
     }
 }
