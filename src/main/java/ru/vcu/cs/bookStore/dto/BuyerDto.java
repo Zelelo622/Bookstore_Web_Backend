@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class BuyerDto {
-    private Integer id;
+    private Integer buyer_id;
     private String first_name;
     private String second_name;
     private String email;

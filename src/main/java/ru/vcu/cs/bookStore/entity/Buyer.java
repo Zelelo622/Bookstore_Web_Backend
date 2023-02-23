@@ -19,7 +19,7 @@ import javax.persistence.Id;
 public class Buyer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer buyer_id;
 
     @NotNull
     private String first_name;
@@ -31,12 +31,12 @@ public class Buyer {
 
     private String phone;
 
-    public Integer getId() {
-        return id;
+    public Integer getBuyer_id() {
+        return buyer_id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setBuyer_id(Integer id) {
+        this.buyer_id = id;
     }
 
     public String getFirst_name() {

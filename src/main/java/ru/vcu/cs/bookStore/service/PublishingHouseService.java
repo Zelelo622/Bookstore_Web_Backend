@@ -19,7 +19,7 @@ public class PublishingHouseService {
     }
 
     private PublishingHouse findById(Integer id) {
-        return repository.findAll().stream().filter(com -> com.getId().equals(id)).toList().get(0);
+        return repository.findAll().stream().filter(com -> com.getPublishing_house_id().equals(id)).toList().get(0);
     }
 
     public void deletePublishingHouse(Integer id) {
@@ -40,7 +40,7 @@ public class PublishingHouseService {
 
     public void editPublishingHouse(PublishingHouseDto dto) {
         PublishingHouse publishingHouse = new PublishingHouse();
-        publishingHouse.setId(dto.getId());
+        publishingHouse.setPublishing_house_id(dto.getPublishing_house_id());
         publishingHouse.setName(dto.getName());
         repository.save(publishingHouse);
     }

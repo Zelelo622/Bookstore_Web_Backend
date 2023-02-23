@@ -19,7 +19,7 @@ public class BuyerService {
     }
 
     private Buyer findById(Integer id) {
-        return repository.findAll().stream().filter(com -> com.getId().equals(id)).toList().get(0);
+        return repository.findAll().stream().filter(com -> com.getBuyer_id().equals(id)).toList().get(0);
     }
 
     public void deleteBuyer(Integer id) {
@@ -40,7 +40,7 @@ public class BuyerService {
 
     public void editBuyer(BuyerDto dto) {
         Buyer buyer = new Buyer();
-        buyer.setId(dto.getId());
+        buyer.setBuyer_id(dto.getBuyer_id());
         buyer.setFirst_name(dto.getFirst_name());
         buyer.setSecond_name(dto.getSecond_name());
         buyer.setEmail(dto.getEmail());

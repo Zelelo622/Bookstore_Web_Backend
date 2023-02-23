@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class PublishingHouseDto {
-    private Integer id;
+    private Integer publishing_house_id;
     private String name;
 }

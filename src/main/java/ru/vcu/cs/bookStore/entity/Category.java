@@ -8,6 +8,7 @@ import lombok.Setter;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
@@ -17,17 +18,17 @@ import javax.persistence.*;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer category_id;
 
     @NotNull
     private String name;
 
-    public Integer getId() {
-        return id;
+    public Integer getCategory_id() {
+        return category_id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCategory_id(Integer id) {
+        this.category_id = id;
     }
 
     public String getName() {

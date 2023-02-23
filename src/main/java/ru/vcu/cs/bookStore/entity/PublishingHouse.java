@@ -17,17 +17,17 @@ import javax.persistence.*;
 public class PublishingHouse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer publishing_house_id;
 
     @NotNull
     private String name;
 
-    public Integer getId() {
-        return id;
+    public Integer getPublishing_house_id() {
+        return publishing_house_id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setPublishing_house_id(Integer id) {
+        this.publishing_house_id = id;
     }
 
     public String getName() {

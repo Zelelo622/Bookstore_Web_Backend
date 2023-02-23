@@ -19,7 +19,7 @@ public class CategoryService {
     }
 
     private Category findById(Integer id) {
-        return repository.findAll().stream().filter(com -> com.getId().equals(id)).toList().get(0);
+        return repository.findAll().stream().filter(com -> com.getCategory_id().equals(id)).toList().get(0);
     }
 
     public void deleteCategory(Integer id) {
@@ -40,7 +40,7 @@ public class CategoryService {
 
     public void editCategory(CategoryDto dto) {
         Category category = new Category();
-        category.setId(dto.getId());
+        category.setCategory_id(dto.getCategory_id());
         category.setName(dto.getName());
         repository.save(category);
     }
