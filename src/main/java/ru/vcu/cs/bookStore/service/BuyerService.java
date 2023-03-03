@@ -1,9 +1,7 @@
 package ru.vcu.cs.bookStore.service;
 
 import org.springframework.stereotype.Service;
-import ru.vcu.cs.bookStore.dto.BuyerDto;
 import ru.vcu.cs.bookStore.entity.Buyer;
-import ru.vcu.cs.bookStore.mapper.BuyerMapper;
 import ru.vcu.cs.bookStore.repository.BuyerRepository;
 
 import java.util.List;
@@ -11,11 +9,9 @@ import java.util.List;
 @Service
 public class BuyerService {
     private final BuyerRepository repository;
-    private final BuyerMapper mapper;
 
-    public BuyerService(BuyerRepository repository, BuyerMapper mapper) {
+    public BuyerService(BuyerRepository repository) {
         this.repository = repository;
-        this.mapper = mapper;
     }
 
     private Buyer findById(Integer id) {
@@ -26,25 +22,19 @@ public class BuyerService {
         repository.delete(findById(id));
     }
 
-    public void addNewBuyer(BuyerDto dto) {
-        repository.save(mapper.toEntity(dto));
+    public void addNewBuyer(Buyer buyer) {
+        repository.save(buyer);
     }
 
     public List<Buyer> getAll() {
         return repository.findAll();
     }
 
-    public BuyerDto getById(Integer id) {
-        return mapper.toDto(findById(id));
+    public Buyer getById(Integer id) {
+        return findById(id);
     }
 
-    public void editBuyer(BuyerDto dto) {
-        Buyer buyer = new Buyer();
-        buyer.setBuyer_id(dto.getBuyer_id());
-        buyer.setFirst_name(dto.getFirst_name());
-        buyer.setSecond_name(dto.getSecond_name());
-        buyer.setEmail(dto.getEmail());
-        buyer.setPhone(dto.getPhone());
+    public void editBuyer(Buyer buyer) {
         repository.save(buyer);
     }
 }
