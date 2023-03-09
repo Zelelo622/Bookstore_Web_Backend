@@ -1,6 +1,6 @@
 package ru.vcu.cs.bookStore.service;
 import org.springframework.stereotype.Service;
-import ru.vcu.cs.bookStore.entity.Category;
+import ru.vcu.cs.bookStore.data.entity.Category;
 
 import ru.vcu.cs.bookStore.repository.CategoryRepository;
 
@@ -15,7 +15,7 @@ public class CategoryService {
     }
 
     private Category findById(Integer id) {
-        return repository.findAll().stream().filter(com -> com.getCategory_id().equals(id)).toList().get(0);
+        return repository.findAll().stream().filter(entity -> entity.getCategory_id().equals(id)).toList().get(0);
     }
 
     public void deleteCategory(Integer id) {

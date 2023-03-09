@@ -1,10 +1,11 @@
 package ru.vcu.cs.bookStore.controller;
 
-import org.springframework.web.bind.annotation.*;
-import ru.vcu.cs.bookStore.entity.Buyer;
-import ru.vcu.cs.bookStore.service.BuyerService;
+        import org.springframework.web.bind.annotation.*;
+        import ru.vcu.cs.bookStore.data.dto.BuyerDto;
+        import ru.vcu.cs.bookStore.data.entity.Buyer;
+        import ru.vcu.cs.bookStore.service.BuyerService;
 
-import java.util.List;
+        import java.util.List;
 
 @RestController
 public class BuyerController {
@@ -15,12 +16,12 @@ public class BuyerController {
     }
 
     @GetMapping("/buyer")
-    public List<Buyer> getAllBuyer() {
+    public List<BuyerDto> getAllBuyer() {
         return service.getAll();
     }
 
     @GetMapping("/buyer/{id}")
-    public Buyer getBuyerById(@PathVariable Integer id) {
+    public BuyerDto getBuyerById(@PathVariable Integer id) {
         return service.getById(id);
     }
 
@@ -30,12 +31,13 @@ public class BuyerController {
     }
 
     @PostMapping("/buyer/new")
-    public void addBuyer(@RequestBody Buyer buyer) {
+    public void addBuyer(@RequestBody BuyerDto buyer) {
         service.addNewBuyer(buyer);
     }
 
-    @PutMapping("/buyer/edit")
-    public void editBuyer(@RequestBody Buyer buyer) {
-        service.editBuyer(buyer);
+    @PutMapping("/buyer/edit/{id}")
+    public void editBuyer(@RequestBody BuyerDto buyer, @PathVariable Integer id) {
+        service.updateBuyer(buyer, id);
     }
 }
+

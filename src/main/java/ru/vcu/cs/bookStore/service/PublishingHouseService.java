@@ -1,7 +1,7 @@
 package ru.vcu.cs.bookStore.service;
 
 import org.springframework.stereotype.Service;
-import ru.vcu.cs.bookStore.entity.PublishingHouse;
+import ru.vcu.cs.bookStore.data.entity.PublishingHouse;
 import ru.vcu.cs.bookStore.repository.PublishingHouseRepository;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public class PublishingHouseService {
     }
 
     private PublishingHouse findById(Integer id) {
-        return repository.findAll().stream().filter(com -> com.getPublishing_house_id().equals(id)).toList().get(0);
+        return repository.findAll().stream().filter(entity -> entity.getPublishing_house_id().equals(id)).toList().get(0);
     }
 
     public void deletePublishingHouse(Integer id) {

@@ -2,7 +2,7 @@ package ru.vcu.cs.bookStore.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import ru.vcu.cs.bookStore.entity.PublishingHouse;
+import ru.vcu.cs.bookStore.data.entity.PublishingHouse;
 
 import java.util.List;
 

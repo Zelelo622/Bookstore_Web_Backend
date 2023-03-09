@@ -1,7 +1,7 @@
 package ru.vcu.cs.bookStore.controller;
 
 import org.springframework.web.bind.annotation.*;
-import ru.vcu.cs.bookStore.entity.Category;
+import ru.vcu.cs.bookStore.data.entity.Category;
 import ru.vcu.cs.bookStore.service.CategoryService;
 
 import java.util.List;

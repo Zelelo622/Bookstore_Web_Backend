@@ -1,7 +1,7 @@
 package ru.vcu.cs.bookStore.controller;
 
 import org.springframework.web.bind.annotation.*;
-import ru.vcu.cs.bookStore.entity.PublishingHouse;
+import ru.vcu.cs.bookStore.data.entity.PublishingHouse;
 import ru.vcu.cs.bookStore.service.PublishingHouseService;
 
 import java.util.List;

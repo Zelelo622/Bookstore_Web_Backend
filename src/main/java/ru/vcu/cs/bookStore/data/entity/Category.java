@@ -1,4 +1,4 @@
-package ru.vcu.cs.bookStore.entity;
+package ru.vcu.cs.bookStore.data.entity;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
@@ -14,20 +14,20 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Setter
 @Getter
-public class PublishingHouse {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer publishing_house_id;
+    private Integer category_id;
 
     @NotNull
     private String name;
 
-    public Integer getPublishing_house_id() {
-        return publishing_house_id;
+    public Integer getCategory_id() {
+        return category_id;
     }
 
-    public void setPublishing_house_id(Integer id) {
-        this.publishing_house_id = id;
+    public void setCategory_id(Integer id) {
+        this.category_id = id;
     }
 
     public String getName() {
