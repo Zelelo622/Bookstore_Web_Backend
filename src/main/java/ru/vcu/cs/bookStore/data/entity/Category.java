@@ -14,27 +14,14 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Setter
 @Getter
+@Table(name = "category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "category_id")
     private Integer category_id;
 
     @NotNull
+    @Column(name = "name")
     private String name;
-
-    public Integer getCategory_id() {
-        return category_id;
-    }
-
-    public void setCategory_id(Integer id) {
-        this.category_id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

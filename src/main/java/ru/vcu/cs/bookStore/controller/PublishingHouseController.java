@@ -1,6 +1,7 @@
 package ru.vcu.cs.bookStore.controller;
 
 import org.springframework.web.bind.annotation.*;
+import ru.vcu.cs.bookStore.data.dto.PublishingHouseDto;
 import ru.vcu.cs.bookStore.data.entity.PublishingHouse;
 import ru.vcu.cs.bookStore.service.PublishingHouseService;
 
@@ -15,12 +16,12 @@ public class PublishingHouseController {
     }
 
     @GetMapping("/publishing_house")
-    public List<PublishingHouse> getAllPublishingHouse() {
+    public List<PublishingHouseDto> getAllPublishingHouse() {
         return service.getAll();
     }
 
     @GetMapping("/publishing_house/{id}")
-    public PublishingHouse getPublishingHouseById(@PathVariable Integer id) {
+    public PublishingHouseDto getPublishingHouseById(@PathVariable Integer id) {
         return service.getById(id);
     }
 
@@ -30,12 +31,12 @@ public class PublishingHouseController {
     }
 
     @PostMapping("/publishing_house/new")
-    public void addPublishingHouse(@RequestBody PublishingHouse publishingHouse) {
+    public void addPublishingHouse(@RequestBody PublishingHouseDto publishingHouse) {
         service.addNewPublishingHouse(publishingHouse);
     }
 
     @PutMapping("/publishing_house/edit")
-    public void editPublishingHouse(@RequestBody PublishingHouse publishingHouse) {
-        service.editPublishingHouse(publishingHouse);
+    public void editPublishingHouse(@RequestBody PublishingHouseDto publishingHouse, @PathVariable Integer id) {
+        service.updatePublishingHouse(publishingHouse, id);
     }
 }

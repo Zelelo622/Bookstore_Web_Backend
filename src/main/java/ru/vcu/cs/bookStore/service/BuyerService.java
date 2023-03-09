@@ -27,7 +27,7 @@ public class BuyerService {
     }
 
     public void addNewBuyer(BuyerDto buyer) {
-        repository.save(mapper.mapToProductEntity(buyer));
+        repository.save(mapper.mapToBuyerEntity(buyer));
     }
 
     public void deleteBuyer(Integer id) {
@@ -36,7 +36,7 @@ public class BuyerService {
 
     public void updateBuyer(BuyerDto buyer, Integer id) {
         Buyer oldBuyer = repository.findById(id).get();
-        Buyer newBuyer = mapper.mapToProductEntity(buyer);
+        Buyer newBuyer = mapper.mapToBuyerEntity(buyer);
         newBuyer.setBuyer_id(oldBuyer.getBuyer_id());
         repository.save(newBuyer);
     }

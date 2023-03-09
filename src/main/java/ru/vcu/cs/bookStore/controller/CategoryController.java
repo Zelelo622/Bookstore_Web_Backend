@@ -1,6 +1,7 @@
 package ru.vcu.cs.bookStore.controller;
 
 import org.springframework.web.bind.annotation.*;
+import ru.vcu.cs.bookStore.data.dto.CategoryDto;
 import ru.vcu.cs.bookStore.data.entity.Category;
 import ru.vcu.cs.bookStore.service.CategoryService;
 
@@ -15,12 +16,12 @@ public class CategoryController {
     }
 
     @GetMapping("/category")
-    public List<Category> getAllCategory() {
+    public List<CategoryDto> getAllCategory() {
         return service.getAll();
     }
 
     @GetMapping("/category/{id}")
-    public Category getCategoryById(@PathVariable Integer id) {
+    public CategoryDto getCategoryById(@PathVariable Integer id) {
         return service.getById(id);
     }
 
@@ -30,12 +31,12 @@ public class CategoryController {
     }
 
     @PostMapping("/category/new")
-    public void addCategory(@RequestBody Category category) {
+    public void addCategory(@RequestBody CategoryDto category) {
         service.addNewCategory(category);
     }
 
-    @PutMapping("/category/edit")
-    public void editCategory(@RequestBody Category category) {
-        service.editCategory(category);
+    @PutMapping("/category/edit/{id}")
+    public void editCategory(@RequestBody CategoryDto category, @PathVariable Integer id) {
+        service.updateCategory(category, id);
     }
 }
